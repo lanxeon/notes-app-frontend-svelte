@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { Note } from "../core/models/Note";
+import type { Note } from "../Core/models/Note";
 
 const initialData: Note[] = [
   {
