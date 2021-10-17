@@ -1,6 +1,6 @@
 <script lang="ts">
   // components
-  import Card from "./Common/Card.svelte";
+  import Card from "../Common/Card.svelte";
   // models/interfaces
   import type { Note } from "../../Core/models/Note";
   // store
