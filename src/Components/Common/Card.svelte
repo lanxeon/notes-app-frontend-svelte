@@ -1,10 +1,20 @@
 <script lang="ts">
   export let headerText: string = "HEADER";
   export let content: string = "";
+  export let type: "HOME" | "WORK" | "PERSONAL" | "NONE" = "NONE";
+
+  $: colorClass =
+    type === "HOME"
+      ? "orange"
+      : type === "WORK"
+      ? "purple"
+      : type === "PERSONAL"
+      ? "green"
+      : "";
 </script>
 
 <div class="card-wrapper">
-  <div class="card-wrapper__card">
+  <div class={`card-wrapper__card ${colorClass}`}>
     <div class="card-wrapper__card__header">
       <h3>{headerText}</h3>
     </div>
@@ -32,6 +42,17 @@
       // border: 1px solid #ccc;
       border: none;
       box-shadow: 0px 3px 6px #00000029;
+      background-color: #fff;
+
+      &.green {
+        background-color: #66bb6a;
+      }
+      &.orange {
+        background-color: #ff9100;
+      }
+      &.purple {
+        background-color: #5c6bc0;
+      }
 
       &__header {
         display: flex;

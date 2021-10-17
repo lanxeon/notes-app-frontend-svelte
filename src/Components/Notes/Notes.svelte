@@ -7,7 +7,7 @@
 
 <section class="cards">
   {#each $NotesListStore as note (note.id)}
-    <Card headerText={note.title} content={note.body} />
+    <Card headerText={note.title} content={note.body} type={note.type} />
   {/each}
 </section>
 
