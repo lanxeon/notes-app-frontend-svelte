@@ -1,6 +1,7 @@
 <script lang="ts">
   // components
   import Header from "./Components/Header/Header.svelte";
+  import Search from "./Components/Search/Search.svelte";
   import Notes from "./Components/Notes/Notes.svelte";
 </script>
 
@@ -10,6 +11,7 @@
   openSignupModal={() => {}}
 />
 <main>
+  <Search />
   <Notes />
 </main>
 
