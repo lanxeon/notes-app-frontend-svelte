@@ -30,6 +30,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      background-color: #fff;
 
       &__search-icon-container {
         width: 24px;

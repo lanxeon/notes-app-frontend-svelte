@@ -29,7 +29,8 @@
     &__card {
       width: 100%;
       height: 174px;
-      border: 1px solid #ccc;
+      // border: 1px solid #ccc;
+      border: none;
       box-shadow: 0px 3px 6px #00000029;
 
       &__header {

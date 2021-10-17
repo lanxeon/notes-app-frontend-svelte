@@ -21,8 +21,8 @@
     padding: 1em;
     max-width: 960px;
     margin: 80px auto 0;
-    overflow: auto;
-    height: 100%;
+    overflow: hidden;
+    height: auto;
   }
 
   @media (min-width: 640px) {

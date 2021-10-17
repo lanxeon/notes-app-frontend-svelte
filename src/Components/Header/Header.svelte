@@ -45,6 +45,7 @@
     height: 80px;
     background-color: #2196f3;
     color: #fff;
+    z-index: 999;
 
     .header-content {
       padding: 12px 18px;
