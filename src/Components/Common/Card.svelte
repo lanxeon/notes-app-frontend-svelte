@@ -42,7 +42,8 @@
       // border: 1px solid #ccc;
       border: none;
       box-shadow: 0px 3px 6px #00000029;
-      background-color: #fff;
+      background-color: #00000029;
+      color: #fff;
 
       &.green {
         background-color: #66bb6a;
