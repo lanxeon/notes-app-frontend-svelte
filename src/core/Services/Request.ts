@@ -1,3 +1,4 @@
+import { asynchronify } from "./../Utils/Utils";
 import axios from "axios";
 
 const Instance = axios.create({ baseURL: "http://localhost:4747" });
@@ -10,8 +11,20 @@ export enum AjaxMethod {
   PATCH = "PATCH",
 }
 
-const Request = (path: string, method: AjaxMethod, body: any) => {
-  return Instance({ url: path, method, data: body });
+const Request = async (path: string, method: AjaxMethod, body: any) => {
+  try {
+    const [result, error] = await asynchronify(
+      Instance({ url: path, method, data: body })
+    );
+
+    if (error) {
+      throw error;
+    }
+
+    return result.data;
+  } catch (err) {
+    throw err;
+  }
 };
 
 export default Request;

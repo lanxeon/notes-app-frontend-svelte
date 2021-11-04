@@ -1,17 +1,16 @@
 <script lang="ts">
-  // components
-  import Card from "../Common/Card.svelte";
-  // store
-  import NotesListStore from "../../Stores/NotesList";
-
   import { onMount } from "svelte";
+  import Card from "../Common/Card.svelte";
+  import NotesListStore from "../../Stores/NotesList";
   import { asynchronify } from "../../Core/Utils/Utils";
   import { getNotes } from "../../Core/Services/NotesService";
+  import type { Response } from "../../Core/models/Response";
 
   onMount(async () => {
-    const [results, err] = await asynchronify(getNotes());
+    const [results, err] = await asynchronify<Response<any>>(getNotes());
 
     console.log({ results, err });
+    NotesListStore.set(results.data);
   });
 </script>
 
