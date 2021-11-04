@@ -3,6 +3,16 @@
   import Card from "../Common/Card.svelte";
   // store
   import NotesListStore from "../../Stores/NotesList";
+
+  import { onMount } from "svelte";
+  import { asynchronify } from "../../Core/Utils/Utils";
+  import { getNotes } from "../../Core/Services/NotesService";
+
+  onMount(async () => {
+    const [results, err] = await asynchronify(getNotes());
+
+    console.log({ results, err });
+  });
 </script>
 
 <section class="cards">
