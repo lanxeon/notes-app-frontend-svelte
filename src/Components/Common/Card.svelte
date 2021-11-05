@@ -4,6 +4,7 @@
   export let headerText: string = "HEADER";
   export let content: string = "";
   export let type: "HOME" | "WORK" | "PERSONAL" | "NONE" = "NONE";
+  export let footerContent: string = "";
 
   $: colorClass =
     type === "HOME"
@@ -35,6 +36,9 @@
     <div class="card-wrapper__card__content">
       <p>{content}</p>
     </div>
+    <div class="card-wrapper__card__footer">
+      <p>{footerContent}</p>
+    </div>
   </div>
 </div>
 
@@ -58,6 +62,7 @@
       box-shadow: 0px 3px 6px #00000029;
       background-color: #00000029;
       color: #fff;
+      position: relative;
 
       &.green {
         background-color: #66bb6a;
@@ -102,6 +107,33 @@
 
             margin: 0 0.6rem;
           }
+        }
+      }
+
+      &__content {
+        font-size: 0.875rem;
+        line-height: 19px;
+        opacity: 80%;
+      }
+
+      &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        text-align: left;
+        margin: 0 1rem;
+        padding: 0.5rem 0;
+
+        text-overflow: ellipsis;
+
+        /* Needed to make it work */
+        overflow: hidden;
+        white-space: nowrap;
+
+        p {
+          margin: 0;
+          font-size: 0.93rem;
+          opacity: 60%;
         }
       }
     }

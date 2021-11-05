@@ -7,15 +7,24 @@
   import type { Response } from "../../Core/models/Response";
 
   onMount(async () => {
-    // const [results, err] = await asynchronify<Response<any>>(getNotes());
-    // NotesListStore.set(results.data);
-    // console.log({ results, err });
+    const [results, err] = await asynchronify<Response<any>>(getNotes());
+    NotesListStore.set(results.data);
+    console.log({ results, err });
   });
 </script>
 
 <section class="cards">
   {#each $NotesListStore as note (note.id)}
-    <Card headerText={note.title} content={note.body} type={note.type} />
+    <Card
+      headerText={note.title}
+      content={note.body}
+      type={note.type}
+      footerContent={new Date(note.updated_at).toLocaleDateString("en-Us", {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      })}
+    />
   {/each}
 </section>
 
