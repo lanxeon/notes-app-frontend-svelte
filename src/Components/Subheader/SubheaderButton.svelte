@@ -13,7 +13,7 @@
   class:green={color === "green"}
   class:active
 >
-  <span>{text}</span>
+  <span class="text">{text}</span>
 
   {#if showDot}
     <span class="dot">•</span>
@@ -30,16 +30,35 @@
   button {
     width: 90px;
     background-color: transparent;
-    font-size: 1rem;
-    line-height: 1.3rem;
     margin-right: 1rem;
-    font-weight: normal;
+    margin-bottom: 0;
+    padding: 6px 8px;
     outline: none;
     border: none;
     border-radius: 6px;
     color: #00000099;
     opacity: 80%;
     cursor: pointer;
+    position: relative;
+
+    span {
+      &.text {
+        font-size: 1rem;
+        line-height: 1.3rem;
+        font-weight: normal;
+        display: block;
+      }
+
+      &.dot {
+        bottom: -0.4em;
+        left: 50%;
+        transform: translateX(-50%);
+        position: absolute;
+        font-size: 2em;
+        line-height: 1;
+        font-weight: 400;
+      }
+    }
 
     &.orange {
       .dot {
