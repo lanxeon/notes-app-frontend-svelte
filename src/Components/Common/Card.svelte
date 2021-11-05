@@ -114,6 +114,18 @@
         font-size: 0.875rem;
         line-height: 19px;
         opacity: 80%;
+
+        text-overflow: ellipsis;
+        margin: 0.5rem 1rem;
+
+        /* Needed to make it work */
+        overflow: hidden;
+        white-space: nowrap;
+
+        p {
+          margin: 0.5rem 0;
+          text-align: left;
+        }
       }
 
       &__footer {
@@ -123,12 +135,6 @@
         text-align: left;
         margin: 0 1rem;
         padding: 0.5rem 0;
-
-        text-overflow: ellipsis;
-
-        /* Needed to make it work */
-        overflow: hidden;
-        white-space: nowrap;
 
         p {
           margin: 0;
