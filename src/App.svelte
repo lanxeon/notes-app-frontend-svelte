@@ -20,7 +20,7 @@
 <style lang="scss">
   main {
     text-align: center;
-    padding: 1em;
+    padding: 1rem;
     max-width: 960px;
     margin: 80px auto 0;
     overflow: hidden;
@@ -30,6 +30,12 @@
   @media (min-width: 640px) {
     main {
       width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    main {
+      margin: 50px auto 0;
     }
   }
 </style>

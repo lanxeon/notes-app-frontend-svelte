@@ -47,6 +47,10 @@
     color: #fff;
     z-index: 999;
 
+    @media screen and (max-width: 600px) {
+      height: 50px;
+    }
+
     .header-content {
       padding: 12px 18px;
       display: flex;
@@ -58,13 +62,14 @@
 
       h1 {
         margin: 0;
+        font-size: 1.4rem;
 
-        @media screen and (max-width: 900px) {
-          font-size: 1.5em;
-        }
-        @media screen and (max-width: 600px) {
-          font-size: 1em;
-        }
+        // @media screen and (max-width: 900px) {
+        //   font-size: 1.5rem;
+        // }
+        // @media screen and (max-width: 600px) {
+        //   font-size: 1rem;
+        // }
       }
 
       .account {
@@ -106,7 +111,7 @@
         padding: 0;
 
         li {
-          margin: 0 8px;
+          margin: 0 0.5rem;
 
           button {
             background-color: transparent;
