@@ -1,9 +1,26 @@
 <script lang="ts">
-  export let totalNotes: number = 0;
-  export let completedNotes: number = 0;
+  import { onDestroy, onMount } from "svelte";
+  import type { Unsubscriber } from "svelte/store";
+
+  import NotesListStore from "../../Stores/NotesList";
+
+  let totalNotes: number = 0;
+  let completedNotes: number = 0;
+  let subscription: Unsubscriber;
 
   $: completionPercentage =
     completedNotes === 0 ? 0 : (completedNotes / totalNotes) * 100;
+
+  onMount(() => {
+    subscription = NotesListStore.subscribe((notes) => {
+      totalNotes = notes.length;
+      completedNotes = notes.filter((n) => n.completed).length;
+    });
+  });
+
+  onDestroy(() => {
+    subscription();
+  });
 </script>
 
 <div class="progression">
