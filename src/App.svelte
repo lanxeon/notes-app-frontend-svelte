@@ -4,6 +4,7 @@
   import Search from "./Components/Search/Search.svelte";
   import Notes from "./Components/Notes/Notes.svelte";
   import Completion from "./Components/Completion/Completion.svelte";
+  import Subheader from "./Components/Subheader/Subheader.svelte";
 </script>
 
 <Header
@@ -13,7 +14,8 @@
 />
 <main>
   <Search />
-  <Completion completedNotes={3} totalNotes={7} />
+  <Subheader />
+  <Completion />
   <Notes />
 </main>
 

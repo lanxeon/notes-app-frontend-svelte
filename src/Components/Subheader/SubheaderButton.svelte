@@ -5,7 +5,14 @@
   export let active: boolean = false;
 </script>
 
-<button class={color === "orange" + active ? " active" : ""}>
+<!-- <button class={color === "orange" + active ? " active" : ""}> -->
+<button
+  class:orange={color === "orange"}
+  class:blue={color === "blue"}
+  class:purple={color === "purple"}
+  class:green={color === "green"}
+  class:active
+>
   <span>{text}</span>
 
   {#if showDot}
