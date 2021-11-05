@@ -7,10 +7,9 @@
   import type { Response } from "../../Core/models/Response";
 
   onMount(async () => {
-    const [results, err] = await asynchronify<Response<any>>(getNotes());
-
-    console.log({ results, err });
-    NotesListStore.set(results.data);
+    // const [results, err] = await asynchronify<Response<any>>(getNotes());
+    // NotesListStore.set(results.data);
+    // console.log({ results, err });
   });
 </script>
 

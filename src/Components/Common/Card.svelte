@@ -1,4 +1,6 @@
 <script lang="ts">
+  import Checkbox from "../Checkbox/Checkbox.svelte";
+
   export let headerText: string = "HEADER";
   export let content: string = "";
   export let type: "HOME" | "WORK" | "PERSONAL" | "NONE" = "NONE";
@@ -16,7 +18,19 @@
 <div class="card-wrapper">
   <div class={`card-wrapper__card ${colorClass}`}>
     <div class="card-wrapper__card__header">
-      <h3>{headerText}</h3>
+      <div class="card-wrapper__card__header__left">
+        <Checkbox
+          checked={false}
+          onChange={() => {
+            console.log("HELLO");
+          }}
+        />
+        <h3>{headerText}</h3>
+      </div>
+      <div class="card-wrapper__card__header__right">
+        <img src="/assets/edit.svg" alt="edit-icon" />
+        <img src="/assets/trash.svg" alt="delete-icon" />
+      </div>
     </div>
     <div class="card-wrapper__card__content">
       <p>{content}</p>
@@ -58,10 +72,36 @@
       &__header {
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-between;
+        padding: 0.8rem 1rem;
 
-        h3 {
-          margin: none;
+        &__left {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          h3 {
+            margin: 0;
+            font-weight: 500;
+            font-size: 20px;
+            margin-left: 1.2rem;
+            line-height: 26px;
+          }
+        }
+
+        &__right {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+
+            margin: 0 0.6rem;
+          }
         }
       }
     }
