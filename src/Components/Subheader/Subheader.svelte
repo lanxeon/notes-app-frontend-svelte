@@ -11,7 +11,10 @@
       <SubheaderButton text="Work" color="green" showDot />
     </div>
     <div class="subheader__content__right">
-      <button> + ADD NOTE </button>
+      <button>
+        <img src="/assets/add.svg" alt="add-icon" />
+        <span>ADD NOTE</span>
+      </button>
     </div>
   </div>
 </div>
@@ -37,7 +40,27 @@
       &__right {
         button {
           background-color: #2196f3;
+          font-size: 0.875rem;
+          line-height: 19px;
+          word-spacing: 1.25px;
+          width: 130px;
           color: #fff;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          margin: 0;
+          outline: none;
+          border: none;
+          border-radius: 4px;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+
+          img {
+            width: 1em;
+            height: 1em;
+            margin-right: 0.85em;
+          }
         }
       }
     }
