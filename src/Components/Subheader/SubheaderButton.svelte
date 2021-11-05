@@ -21,10 +21,25 @@
 </button>
 
 <style lang="scss">
+  @mixin active-button($bg) {
+    color: #fff;
+    opacity: 100%;
+    background-color: $bg;
+  }
+
   button {
-    width: 80px;
+    width: 90px;
+    background-color: transparent;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    margin-right: 1rem;
+    font-weight: normal;
+    outline: none;
+    border: none;
+    border-radius: 6px;
     color: #00000099;
     opacity: 80%;
+    cursor: pointer;
 
     &.orange {
       .dot {
@@ -32,8 +47,7 @@
       }
 
       &.active {
-        background-color: #ff9100;
-        color: #fff;
+        @include active-button(#ff9100);
       }
     }
 
@@ -43,8 +57,7 @@
       }
 
       &.active {
-        background-color: #69bcff;
-        color: #fff;
+        @include active-button(#69bcff);
       }
     }
 
@@ -54,8 +67,7 @@
       }
 
       &.active {
-        background-color: #5c6bc0;
-        color: #fff;
+        @include active-button(#5c6bc0);
       }
     }
 
@@ -65,8 +77,7 @@
       }
 
       &.active {
-        background-color: #66bb6a;
-        color: #fff;
+        @include active-button(#66bb6a);
       }
     }
   }
