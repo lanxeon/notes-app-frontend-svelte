@@ -88,9 +88,9 @@
           h3 {
             margin: 0;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 1.25rem;
             margin-left: 1.2rem;
-            line-height: 26px;
+            line-height: 1.625rem;
           }
         }
 
@@ -101,8 +101,8 @@
           justify-content: center;
 
           img {
-            width: 18px;
-            height: 18px;
+            width: 1.125rem;
+            height: 1.125rem;
             cursor: pointer;
 
             margin: 0 0.6rem;
@@ -125,6 +125,7 @@
         p {
           margin: 0.5rem 0;
           text-align: left;
+          font-weight: normal;
         }
       }
 
@@ -140,6 +141,7 @@
           margin: 0;
           font-size: 0.93rem;
           opacity: 60%;
+          font-weight: 500;
         }
       }
     }

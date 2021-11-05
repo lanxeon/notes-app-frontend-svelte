@@ -3,6 +3,7 @@
   import Header from "./Components/Header/Header.svelte";
   import Search from "./Components/Search/Search.svelte";
   import Notes from "./Components/Notes/Notes.svelte";
+  import Completion from "./Components/Completion/Completion.svelte";
 </script>
 
 <Header
@@ -12,6 +13,7 @@
 />
 <main>
   <Search />
+  <Completion completedNotes={3} totalNotes={7} />
   <Notes />
 </main>
 

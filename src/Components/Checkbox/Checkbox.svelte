@@ -16,8 +16,8 @@
 
 <style lang="scss">
   .checkbox__container {
-    width: 18px;
-    height: 18px;
+    width: 1.125rem;
+    height: 1.125rem;
     position: relative;
     cursor: pointer;
 
