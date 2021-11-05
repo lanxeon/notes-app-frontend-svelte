@@ -11,19 +11,32 @@
     NotesListStore.set(results.data);
     console.log({ results, err });
   });
+
+  const onToggleCheckbox = (idx: number) => {
+    NotesListStore.update((curNotes) => {
+      let newNotes = [...curNotes];
+      newNotes[idx] = { ...newNotes[idx], completed: !newNotes[idx].completed };
+
+      return newNotes;
+    });
+  };
 </script>
 
 <section class="cards">
-  {#each $NotesListStore as note (note.id)}
+  {#each $NotesListStore as note, idx (note.id)}
     <Card
       headerText={note.title}
       content={note.body}
       type={note.type}
+      completed={note.completed}
       footerContent={new Date(note.updated_at).toLocaleDateString("en-Us", {
         month: "short",
         day: "2-digit",
         year: "numeric",
       })}
+      toggleCheckbox={() => {
+        onToggleCheckbox(idx);
+      }}
     />
   {/each}
 </section>

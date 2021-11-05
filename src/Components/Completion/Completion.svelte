@@ -25,7 +25,9 @@
 
 <div class="progression">
   <p>
-    You have {completedNotes}/{totalNotes} completed
+    {completedNotes === totalNotes && totalNotes !== 0
+      ? "You have completed all notes"
+      : `You have ${completedNotes}/${totalNotes} completed`}
   </p>
   <div class="progression__progress-bar">
     <div

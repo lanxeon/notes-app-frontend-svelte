@@ -5,6 +5,8 @@
   export let content: string = "";
   export let type: "HOME" | "WORK" | "PERSONAL" | "NONE" = "NONE";
   export let footerContent: string = "";
+  export let completed: boolean = false;
+  export let toggleCheckbox: () => void = () => {};
 
   $: colorClass =
     type === "HOME"
@@ -20,12 +22,7 @@
   <div class={`card-wrapper__card ${colorClass}`}>
     <div class="card-wrapper__card__header">
       <div class="card-wrapper__card__header__left">
-        <Checkbox
-          checked={false}
-          onChange={() => {
-            console.log("HELLO");
-          }}
-        />
+        <Checkbox checked={completed} onChange={toggleCheckbox} />
         <h3>{headerText}</h3>
       </div>
       <div class="card-wrapper__card__header__right">
