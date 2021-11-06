@@ -45,7 +45,7 @@
     height: 80px;
     background-color: #2196f3;
     color: #fff;
-    z-index: 999;
+    z-index: 99;
 
     @media screen and (max-width: 600px) {
       height: 50px;
